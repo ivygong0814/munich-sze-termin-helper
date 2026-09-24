@@ -6,33 +6,28 @@
 
 https://stadt.muenchen.de/buergerservice/terminvereinbarung.html#/services/10339028/locations/10461
 
+## 对应脚本
+
+[`scripts/munich-sze-beschaeftigte-angehoerige-quick-booker.user.js`](../scripts/munich-sze-beschaeftigte-angehoerige-quick-booker.user.js)
+
 ## 安装
 
 1. Chrome 安装 Tampermonkey。
 2. `chrome://extensions` → Tampermonkey → `Details` → 开启 **Allow User Scripts**。
 3. Tampermonkey → `Create a new script`。
-4. 复制仓库里的 [`scripts/munich-sze-notfall-helper.user.js`](../scripts/munich-sze-notfall-helper.user.js) 并保存。
-
-![Tampermonkey extension](../images/tampermonkey-extension.svg)
-
-![Userscript enabled](../images/tampermonkey-scripts.svg)
+4. 打开上面的 Beschäftigte / Angehörige 版脚本，把代码全部复制进去并保存。
 
 ## 使用
 
 打开预约页后，右下角应该出现 **SZE Quick Booker** 和 `AUTO: ON`。
 
-> 下图是预约界面示意图；Beschäftigte / Angehörige 页面使用同一套预约界面，操作逻辑相同。
-
-![Appointment page](../images/appointment-page.svg)
-
 每一轮：
 
 1. 手动点击 `Ich bin kein Bot.`
 2. 完成人机验证。
-3. 手动点击第一次 `Weiter`。
-4. 进入 Termin 页面后，如果系统放出日期，脚本会尝试立即选择可用日期和时间段。
-5. slot 成功后，脚本会尝试点击后续 `Weiter`。
-6. 到 `Kontakt` 页面后停止，你自己完成后面的信息和最终提交。
+3. 脚本会继续监听 Termin 页面。
+4. 如果系统放出日期，脚本会尝试立即选择可用日期和时间段。
+5. 到 `Kontakt` 页面后停止，你自己完成后面的信息和最终提交。
 
 如果显示 `NO TERMIN`，说明这一轮没有号。需要返回上一页，重新完成 CAPTCHA 后再查。脚本不会绕过验证码，也不会自行高频刷新服务器。
 
