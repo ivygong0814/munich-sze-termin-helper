@@ -2,11 +2,11 @@
 
 一个给慕尼黑 **Servicestelle für Zuwanderung und Einbürgerung (SZE)** Notfalltermin 页面使用的 Tampermonkey 辅助脚本。
 
-它不会绕过 `Ich bin kein Bot` / CAPTCHA，也不会自动提交最终预约。你需要自己完成验证码；脚本只在验证码通过后帮助更快地点击可预约日期、时间段和 `Weiter`。
+它不会绕过 `Ich bin kein Bot` / CAPTCHA，也不会自动提交最终预约。你需要自己完成验证码，并手动点击第一次 `Weiter`；脚本从 Termin 页面开始帮助更快地点击可预约日期、时间段和后续 `Weiter`。
 
 ## 支持的两个入口
 
-- **Studierende / Arbeitsplatzsuche nach Studium**  
+- **Studierende / Hochschulabsolvent*innen /相关学生类入口**  
   https://stadt.muenchen.de/buergerservice/terminvereinbarung.html#/services/10339027/locations/10187259
 - **Beschäftigte / Angehörige**  
   https://stadt.muenchen.de/buergerservice/terminvereinbarung.html#/services/10339028/locations/10461
@@ -18,13 +18,13 @@
 3. Tampermonkey → **Create a new script**。
 4. 把 [`scripts/munich-sze-notfall-helper.user.js`](scripts/munich-sze-notfall-helper.user.js) 全部复制进去并保存。
 5. 打开对应预约页面，确认右下角出现 `SZE Quick Booker` 或 `SZE Student Quick Booker`，状态为 `AUTO: ON`。
-6. 手动完成 `Ich bin kein Bot`。后续脚本会帮助快速选择日期和时间。
+6. 手动完成 `Ich bin kein Bot`，再手动点击第一次 `Weiter`。进入 Termin 页面后，脚本会帮助快速选择日期和时间。
 
-![Tampermonkey extension](images/tampermonkey-extension.png)
+![Tampermonkey extension](images/tampermonkey-extension.svg)
 
-![Enabled userscripts](images/tampermonkey-scripts.png)
+![Enabled userscripts](images/tampermonkey-scripts.svg)
 
-![Appointment page](images/student-appointment-page.png)
+![Appointment page](images/appointment-page.svg)
 
 ## 中文图文教程
 
