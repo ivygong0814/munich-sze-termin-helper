@@ -1,6 +1,6 @@
 # 学生版：München SZE Notfall Termin Helper
 
-适用于：**Studierende、德国毕业后的 Arbeitsplatzsuche，以及官网列出的相关学生类别**。
+适用于：**Studierende、Hochschulabsolvent*innen，以及官网列出的相关学生类 Notfall**。
 
 ## 预约入口
 
@@ -13,17 +13,24 @@ https://stadt.muenchen.de/buergerservice/terminvereinbarung.html#/services/10339
 3. Tampermonkey → `Create a new script`。
 4. 复制仓库里的 [`scripts/munich-sze-notfall-helper.user.js`](../scripts/munich-sze-notfall-helper.user.js) 并保存。
 
+![Tampermonkey extension](../images/tampermonkey-extension.svg)
+
+![Userscript enabled](../images/tampermonkey-scripts.svg)
+
 ## 使用
 
 打开预约页后，右下角应该出现 **SZE Student Quick Booker** 和 `AUTO: ON`。
+
+![Appointment page](../images/appointment-page.svg)
 
 每一轮：
 
 1. 手动点击 `Ich bin kein Bot.`
 2. 完成人机验证。
-3. 脚本会尝试继续点击 `Weiter`。
-4. 如果系统放出日期，脚本会尝试立即选择可用日期和时间段。
-5. 到 `Kontakt` 页面后停止，你自己完成后面的信息和最终提交。
+3. 手动点击第一次 `Weiter`。
+4. 进入 Termin 页面后，如果系统放出日期，脚本会尝试立即选择可用日期和时间段。
+5. slot 成功后，脚本会尝试点击后续 `Weiter`。
+6. 到 `Kontakt` 页面后停止，你自己完成后面的信息和最终提交。
 
 如果显示 `NO TERMIN`，说明这一轮没有号。需要返回上一页，重新完成 CAPTCHA 后再查。脚本不会绕过验证码，也不会自行高频刷新服务器。
 
